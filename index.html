@@ -1399,8 +1399,8 @@
   <!-- Contact -->
   <section class="contact" id="contact">
     <h2>Let's Work Together</h2>
-    <p><i class="fas fa-envelope"></i> info@alphamarkex.com</p>
-    <p><i class="fas fa-phone"></i> +91 98765 43210</p>
+    <p><i class="fas fa-envelope"></i> team@alphamarkex.com</p>
+    <p><i class="fas fa-phone"></i> +91 92358 60901</p>
     <p><i class="fas fa-globe"></i> www.alphamarkex.com</p>
     
     <div class="contact-form">
@@ -1521,5 +1521,35 @@
     // Initialize first testimonial
     showTestimonial(currentTestimonial);
   </script>
+  <script>
+    <script>
+    const scriptURL = 'https://script.google.com/macros/s/AKfycbxZLM0o2LXJGBi3pENR4SIS0Cdx7fOoix8H4E1hZGUMKIPpaEFEwEMnv1eFanuyIwav/exec';
+    const form = document.getElementById('contact-Form');
+
+    form.addEventListener('submit', e => {
+      e.preventDefault();
+      const formData = new FormData(form);
+
+      fetch(scriptURL, {
+        method: 'POST',
+        body: formData
+      })
+      .then(response => {
+        if (response.ok) {
+          alert("✅ Thank you! Your message has been submitted.");
+          form.reset();
+        } else {
+          alert("❌ Error submitting form. Please try again.");
+        }
+      })
+      .catch(error => {
+        alert("❌ There was an error. Please try again.");
+        console.error('Error!', error.message);
+      });
+    });
+  </script>
+
+  </script>
 </body>
+
 </html>
